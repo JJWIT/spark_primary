@@ -1,0 +1,31 @@
+    Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+    19/02/01 15:37:39 INFO SparkContext: Running Spark version 2.3.0
+    19/02/01 15:37:39 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+    19/02/01 15:37:40 INFO SparkContext: Submitted application: collect
+    19/02/01 15:37:40 INFO SecurityManager: Changing view acls to: jiajianwei1
+    19/02/01 15:37:40 INFO SecurityManager: Changing modify acls to: jiajianwei1
+    19/02/01 15:37:40 INFO SecurityManager: Changing view acls groups to:
+    19/02/01 15:37:40 INFO SecurityManager: Changing modify acls groups to:
+    19/02/01 15:37:40 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jiajianwei1); groups with view permissions: Set(); users  with modify permissions: Set(jiajianwei1); groups with modify permissions: Set()
+    19/02/01 15:37:41 INFO Utils: Successfully started service 'sparkDriver' on port 50262.
+    19/02/01 15:37:41 INFO SparkEnv: Registering MapOutputTracker
+    19/02/01 15:37:41 INFO SparkEnv: Registering BlockManagerMaster
+    19/02/01 15:37:41 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+    19/02/01 15:37:41 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+    19/02/01 15:37:41 INFO DiskBlockManager: Created local directory at C:\Users\jiajianwei1\AppData\Local\Temp\blockmgr-122ae337-a69c-4746-b8c3-92e8f97c1ab1
+    19/02/01 15:37:41 INFO MemoryStore: MemoryStore started with capacity 862.2 MB
+    19/02/01 15:37:41 INFO SparkEnv: Registering OutputCommitCoordinator
+    19/02/01 15:37:41 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+    19/02/01 15:37:41 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://ZB-PF11GKAA.360buyAD.local:4040
+    19/02/01 15:37:41 INFO Executor: Starting executor ID driver on host localhost
+    19/02/01 15:37:41 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 50275.
+    19/02/01 15:37:41 INFO NettyBlockTransferService: Server created on ZB-PF11GKAA.360buyAD.local:50275
+    19/02/01 15:37:41 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+    19/02/01 15:37:41 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, ZB-PF11GKAA.360buyAD.local, 50275, None)
+    19/02/01 15:37:41 INFO BlockManagerMasterEndpoint: Registering block manager ZB-PF11GKAA.360buyAD.local:50275 with 862.2 MB RAM, BlockManagerId(driver, ZB-PF11GKAA.360buyAD.local, 50275, None)
+    19/02/01 15:37:41 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, ZB-PF11GKAA.360buyAD.local, 50275, None)
+    19/02/01 15:37:41 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, ZB-PF11GKAA.360buyAD.local, 50275, None)
+    19/02/01 15:37:43 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 208.5 KB, free 862.0 MB)
+    19/02/01 15:37:43 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 20.0 KB, free 862.0 MB)
+    19/02/01 15:37:43 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on ZB-PF11GKAA.360buyAD.local:50275 (size: 20.0 KB, free: 862.2 MB)
+    19/02/01 15:37:43 INFO SparkContext: Created broadcast 0 from textFile at Operator_collect.scala:11
