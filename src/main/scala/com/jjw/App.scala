@@ -13,4 +13,9 @@ object App extends Application {
     val a = "abc"
     println(a)
   }
+
+  def method (args : Array[String]) : Unit = {
+    val b = "abd"
+    println(b)
+  }
 }
