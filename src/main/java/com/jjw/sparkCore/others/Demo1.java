@@ -21,15 +21,15 @@ import scala.Tuple2;
  */
 public class Demo1 {
 	public static void main(String[] args) {
-		SparkConf conf = new SparkConf();
+		/*SparkConf conf = new SparkConf();
 		conf.setMaster("local").setAppName("demo1");
 		JavaSparkContext jsc = new JavaSparkContext(conf);
 		JavaRDD<String> lines = jsc.textFile("./records.txt");
 		JavaRDD<String> flatMap = lines.flatMap(new FlatMapFunction<String, String>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -39,9 +39,9 @@ public class Demo1 {
 		});
 		JavaPairRDD<String, Integer> mapToPair = flatMap.mapToPair(new PairFunction<String,String, Integer>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -54,9 +54,9 @@ public class Demo1 {
 		
 		final List<Tuple2<String, Integer>> take = sample.reduceByKey(new Function2<Integer,Integer,Integer>(){
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -66,9 +66,9 @@ public class Demo1 {
 			
 		}).mapToPair(new PairFunction<Tuple2<String,Integer>, Integer, String>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -78,9 +78,9 @@ public class Demo1 {
 			}
 		}).sortByKey(false).mapToPair(new PairFunction<Tuple2<Integer,String>, String, Integer>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -94,9 +94,9 @@ public class Demo1 {
 		
 		JavaPairRDD<String, Integer> result = mapToPair.filter(new Function<Tuple2<String,Integer>, Boolean>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -105,9 +105,9 @@ public class Demo1 {
 			}
 		}).reduceByKey(new Function2<Integer,Integer,Integer>(){
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -117,9 +117,9 @@ public class Demo1 {
 			
 		}).mapToPair(new PairFunction<Tuple2<String,Integer>, Integer, String>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -129,9 +129,9 @@ public class Demo1 {
 			}
 		}).sortByKey(false).mapToPair(new PairFunction<Tuple2<Integer,String>, String, Integer>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -143,9 +143,9 @@ public class Demo1 {
 		
 		result.foreach(new VoidFunction<Tuple2<String,Integer>>() {
 			
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -154,7 +154,7 @@ public class Demo1 {
 			}
 		});
 		
-		jsc.stop();
-		
+		jsc.stop();*/
+
 	}
 }

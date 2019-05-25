@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.cassandra.cli.CliParser.newColumnFamily_return;
+//import org.apache.cassandra.cli.CliParser.newColumnFamily_return;
 import org.apache.spark.Partitioner;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;

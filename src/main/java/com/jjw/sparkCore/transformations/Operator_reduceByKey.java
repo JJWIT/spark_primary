@@ -15,15 +15,15 @@ import scala.Tuple2;
 
 public class Operator_reduceByKey {
 	public static void main(String[] args) {
-		SparkConf conf = new SparkConf();
+		/*SparkConf conf = new SparkConf();
 		conf.setMaster("local").setAppName("reduceByKey");
 		JavaSparkContext jsc = new JavaSparkContext(conf);
 		JavaRDD<String> lines = jsc.textFile("./words.txt");
 		JavaRDD<String> flatMap = lines.flatMap(new FlatMapFunction<String, String>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -33,9 +33,9 @@ public class Operator_reduceByKey {
 		});
 		JavaPairRDD<String, Integer> mapToPair = flatMap.mapToPair(new PairFunction<String, String, Integer>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -47,9 +47,9 @@ public class Operator_reduceByKey {
 		
 		JavaPairRDD<String, Integer> reduceByKey = mapToPair.reduceByKey(new Function2<Integer,Integer,Integer>(){
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -60,9 +60,9 @@ public class Operator_reduceByKey {
 		},10);
 		reduceByKey.foreach(new VoidFunction<Tuple2<String,Integer>>() {
 			
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -71,6 +71,6 @@ public class Operator_reduceByKey {
 			}
 		});
 		
-		jsc.stop();
+		jsc.stop();*/
 	}
 }

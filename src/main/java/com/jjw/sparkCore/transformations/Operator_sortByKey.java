@@ -15,16 +15,16 @@ import scala.Tuple2;
 
 public class Operator_sortByKey {
 	public static void main(String[] args) {
-		SparkConf conf = new SparkConf();
+		/*SparkConf conf = new SparkConf();
 		conf.setMaster("local");
 		conf.setAppName("sortByKey");
 		JavaSparkContext jsc = new JavaSparkContext(conf);
 		JavaRDD<String> lines = jsc.textFile("./words.txt");
 		JavaRDD<String> flatMap = lines.flatMap(new FlatMapFunction<String, String>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -34,9 +34,9 @@ public class Operator_sortByKey {
 		});
 		JavaPairRDD<String, Integer> mapToPair = flatMap.mapToPair(new PairFunction<String, String, Integer>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -47,9 +47,9 @@ public class Operator_sortByKey {
 		
 		JavaPairRDD<String, Integer> reduceByKey = mapToPair.reduceByKey(new Function2<Integer, Integer, Integer>() {
 			
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -59,9 +59,9 @@ public class Operator_sortByKey {
 		});
 		reduceByKey.mapToPair(new PairFunction<Tuple2<String,Integer>, Integer, String>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -71,9 +71,9 @@ public class Operator_sortByKey {
 			}
 		}).sortByKey(false).mapToPair(new PairFunction<Tuple2<Integer,String>, String, Integer>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -83,15 +83,15 @@ public class Operator_sortByKey {
 			}
 		}).foreach(new VoidFunction<Tuple2<String,Integer>>() {
 			
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
 			public void call(Tuple2<String, Integer> t) throws Exception {
 				System.out.println(t);
 			}
-		});
+		});*/
 	}
 }

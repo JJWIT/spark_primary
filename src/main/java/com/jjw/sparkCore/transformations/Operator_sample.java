@@ -14,7 +14,7 @@ import scala.Tuple2;
 
 public class Operator_sample {
 	public static void main(String[] args) {
-		SparkConf conf = new SparkConf();
+		/*SparkConf conf = new SparkConf();
 		conf.setMaster("local");
 		conf.setAppName("sample");
 		
@@ -22,9 +22,9 @@ public class Operator_sample {
 		JavaRDD<String> lines = jsc.textFile("./words.txt");
 		JavaPairRDD<String, Integer> flatMapToPair = lines.flatMapToPair(new PairFlatMapFunction<String, String, Integer>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -38,9 +38,9 @@ public class Operator_sample {
 		JavaPairRDD<String, Integer> sampleResult = flatMapToPair.sample(true,0.3,4);
 		sampleResult.foreach(new VoidFunction<Tuple2<String,Integer>>() {
 			
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -49,6 +49,6 @@ public class Operator_sample {
 			}
 		});
 		
-		jsc.stop();
+		jsc.stop();*/
 	}
 }

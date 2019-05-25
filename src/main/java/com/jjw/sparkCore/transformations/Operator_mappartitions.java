@@ -12,7 +12,7 @@ import org.apache.spark.api.java.function.Function;
 
 public class Operator_mappartitions {
 	public static void main(String[] args) {
-		SparkConf conf = new SparkConf();
+		/*SparkConf conf = new SparkConf();
 		conf.setMaster("local").setAppName("mappartition");
 		
 		JavaSparkContext sc = new JavaSparkContext(conf);
@@ -20,9 +20,9 @@ public class Operator_mappartitions {
 		
 //		lines.map(new Function<String, String>() {
 //
-//			/**
+//			*//**
 //			 * 
-//			 */
+//			 *//*
 //			private static final long serialVersionUID = 1L;
 //
 //			@Override
@@ -37,9 +37,9 @@ public class Operator_mappartitions {
 		
 		JavaRDD<String> mapPartitions = lines.mapPartitions(new FlatMapFunction<Iterator<String>, String>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -56,7 +56,7 @@ public class Operator_mappartitions {
 			}
 		});
 		mapPartitions.collect();
-		sc.stop();
+		sc.stop();*/
 		
 	}
 }

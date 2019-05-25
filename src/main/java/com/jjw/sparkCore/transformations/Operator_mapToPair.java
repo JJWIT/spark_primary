@@ -14,15 +14,15 @@ import scala.Tuple2;
 
 public class Operator_mapToPair {
 	public static void main(String[] args) {
-		SparkConf conf = new SparkConf();
+		/*SparkConf conf = new SparkConf();
 		conf.setMaster("local").setAppName("mapToPair");
 		JavaSparkContext jsc = new JavaSparkContext(conf);
 		JavaRDD<String> lines = jsc.textFile("./words.txt");
 		JavaRDD<String> flatMap = lines.flatMap(new FlatMapFunction<String, String>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -32,9 +32,9 @@ public class Operator_mapToPair {
 		});
 		JavaPairRDD<String, Integer> result = flatMap.mapToPair(new PairFunction<String, String, Integer>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -45,9 +45,9 @@ public class Operator_mapToPair {
 		
 		result.foreach(new VoidFunction<Tuple2<String,Integer>>() {
 			
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -56,7 +56,7 @@ public class Operator_mapToPair {
 			}
 		});
 		
-		jsc.stop();
+		jsc.stop();*/
 		
 	}
 }
