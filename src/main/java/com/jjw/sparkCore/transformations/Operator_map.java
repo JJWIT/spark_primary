@@ -22,32 +22,33 @@ public class Operator_map {
 		conf.setAppName("map");
 		JavaSparkContext jsc = new JavaSparkContext(conf);
 		JavaRDD<String> line = jsc.textFile("./words.txt");
-		JavaRDD<String> mapResult = line.map(new Function<String, String>() {
+		/*JavaRDD<String> mapResult = line.map(new Function<String, String>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
 			public String call(String s) throws Exception {
 				return s+"~";
 			} 
-		});
-		
-		mapResult.foreach(new VoidFunction<String>() {
-			
-			/**
-			 * 
-			 */
+		});*/
+
+		/*mapResult.foreach(new VoidFunction<String>() {
+
+			*//**
+			 *
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
 			public void call(String t) throws Exception {
 				System.out.println(t);
 			}
-		});
-		
+		});*/
+
+		line.map(x -> "start - " + x).foreach(x -> System.out.println(x));
 		jsc.stop();
 	}
 }
