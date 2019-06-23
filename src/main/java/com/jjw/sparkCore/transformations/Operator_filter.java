@@ -27,11 +27,11 @@ public class Operator_filter {
 		 */
 		JavaSparkContext jsc = new JavaSparkContext(conf);
 		JavaRDD<String> lines = jsc.textFile("./words.txt");
-		JavaRDD<String> resultRDD = lines.filter(new Function<String, Boolean>() {
+		/*JavaRDD<String> resultRDD = lines.filter(new Function<String, Boolean>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -43,16 +43,18 @@ public class Operator_filter {
 		
 		resultRDD.foreach(new VoidFunction<String>() {
 			
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
 			public void call(String line) throws Exception {
 				System.out.println(line);
 			}
-		});
+		});*/
+
+		lines.filter(line -> line.contains("Spark")).foreach(x -> System.out.println(x));
 		jsc.stop();
 	}
 }

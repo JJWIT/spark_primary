@@ -16,11 +16,11 @@ public class Operator_join {
 		SparkConf conf = new SparkConf();
 		conf.setMaster("local").setAppName("join");
 		JavaSparkContext sc = new JavaSparkContext(conf);
-		JavaPairRDD<Integer, String> nameRDD = sc.parallelizePairs(Arrays.asList(
-					new Tuple2<Integer, String>(0, "aa"),
-					new Tuple2<Integer, String>(1, "a"),
-					new Tuple2<Integer, String>(2, "b"),
-					new Tuple2<Integer, String>(3, "c")
+		JavaPairRDD<Integer, Integer> nameRDD = sc.parallelizePairs(Arrays.asList(
+					new Tuple2<Integer, Integer>(0, 101),
+					new Tuple2<Integer, Integer>(1, 102),
+					new Tuple2<Integer, Integer>(2, 103),
+					new Tuple2<Integer, Integer>(3, 104)
 				));
 		JavaPairRDD<Integer, Integer> scoreRDD = sc.parallelizePairs(Arrays.asList(
 				new Tuple2<Integer, Integer>(1, 100),
@@ -28,8 +28,14 @@ public class Operator_join {
 				new Tuple2<Integer, Integer>(3, 300),
 				new Tuple2<Integer, Integer>(4, 400)
 		));
-		JavaPairRDD<Integer, Tuple2<String, Integer>> join = nameRDD.join(scoreRDD);
-//		System.out.println("join.partitions().size()--------"+join.partitions().size());
+		scoreRDD.foreach(x -> {
+			System.out.println(x);
+		});
+		JavaPairRDD join = nameRDD.join(scoreRDD);
+		join.foreach(x -> {
+			System.out.println(x);
+		});
+		System.out.println("join.partitions().size()--------"+join.partitions().size());
 //		join.foreach(new VoidFunction<Tuple2<Integer,Tuple2<String,Integer>>>() {
 //			
 //			/**

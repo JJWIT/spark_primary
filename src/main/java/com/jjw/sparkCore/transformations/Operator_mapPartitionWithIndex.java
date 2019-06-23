@@ -10,6 +10,8 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function2;
 
+import javax.xml.crypto.Data;
+
 public class Operator_mapPartitionWithIndex {
 	public static void main(String[] args) {
 		SparkConf conf = new SparkConf();
@@ -21,12 +23,12 @@ public class Operator_mapPartitionWithIndex {
 		 * 这里的第二个参数是设置并行度,也是RDD的分区数，并行度理论上来说设置大小为core的2~3倍
 		 */
 		JavaRDD<String> parallelize = sc.parallelize(names, 3);
-		JavaRDD<String> mapPartitionsWithIndex = parallelize.mapPartitionsWithIndex(
+		/*JavaRDD<String> mapPartitionsWithIndex = parallelize.mapPartitionsWithIndex(
 				new Function2<Integer, Iterator<String>, Iterator<String>>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -40,8 +42,13 @@ public class Operator_mapPartitionWithIndex {
 				}
 				return list.iterator();
 			}
+		}, true);*/
+
+		/*JavaRDD<String> mapPartitionsWithIndex = parallelize.mapPartitionsWithIndex((index, dataa, datab) -> {
+			return null;
 		}, true);
-		mapPartitionsWithIndex.collect();
+
+		mapPartitionsWithIndex.collect();*/
 		sc.stop();
 	}
 }

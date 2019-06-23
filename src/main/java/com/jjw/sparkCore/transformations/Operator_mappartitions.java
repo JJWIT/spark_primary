@@ -12,17 +12,17 @@ import org.apache.spark.api.java.function.Function;
 
 public class Operator_mappartitions {
 	public static void main(String[] args) {
-		/*SparkConf conf = new SparkConf();
+		SparkConf conf = new SparkConf();
 		conf.setMaster("local").setAppName("mappartition");
 		
 		JavaSparkContext sc = new JavaSparkContext(conf);
-		JavaRDD<String> lines = sc.textFile("./records.txt",3);
+		JavaRDD<String> lines = sc.textFile("./words.txt",3);
 		
 //		lines.map(new Function<String, String>() {
 //
-//			*//**
+//			*
 //			 * 
-//			 *//*
+//
 //			private static final long serialVersionUID = 1L;
 //
 //			@Override
@@ -36,15 +36,11 @@ public class Operator_mappartitions {
 //		
 		
 		JavaRDD<String> mapPartitions = lines.mapPartitions(new FlatMapFunction<Iterator<String>, String>() {
-
-			*//**
-			 * 
-			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public Iterable<String> call(Iterator<String> t) throws Exception {
-				
+			public Iterator<String> call(Iterator<String> t) throws Exception {
+
 				System.out.println("创建数据库连接对象。。。。");
 				List<String> list  = new ArrayList<>();
 				while(t.hasNext()) {
@@ -52,11 +48,24 @@ public class Operator_mappartitions {
 				}
 				System.out.println("批量插入数据库");
 				System.out.println("关闭数据库连接");
-				return list;
+				return list.iterator();
 			}
 		});
-		mapPartitions.collect();
-		sc.stop();*/
+//		mapPartitions.collect();
+
+		JavaRDD<String> stringJavaRDD = lines.mapPartitions(ite -> {
+			System.out.println("创建数据库连接对象。。。。");
+			List<String> list  = new ArrayList<>();
+			while(ite.hasNext()) {
+				System.out.println(ite.next());
+				list.add(ite.next());
+			}
+			System.out.println("批量插入数据库");
+			System.out.println("关闭数据库连接");
+			return list.iterator();
+		});
+		stringJavaRDD.collect();// 触发
+		sc.stop();
 		
 	}
 }

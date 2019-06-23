@@ -16,7 +16,7 @@ import org.apache.spark.api.java.function.VoidFunction;
  */
 public class Operator_flatMap {
 	public static void main(String[] args) {
-		SparkConf conf = new SparkConf();
+		/*SparkConf conf = new SparkConf();
 		conf.setMaster("local");
 		conf.setAppName("flatMap");
 
@@ -24,9 +24,9 @@ public class Operator_flatMap {
 		JavaRDD<String> lines = jsc.textFile("./words.txt");
 		JavaRDD<String> flatMapResult = lines.flatMap(new FlatMapFunction<String, String>() {
 
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -38,9 +38,9 @@ public class Operator_flatMap {
 		});
 		flatMapResult.foreach(new VoidFunction<String>() {
 			
-			/**
+			*//**
 			 * 
-			 */
+			 *//*
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -49,6 +49,6 @@ public class Operator_flatMap {
 			}
 		});
 		
-		jsc.stop();
+		jsc.stop();*/
 	}
 }

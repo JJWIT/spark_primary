@@ -53,6 +53,7 @@ Transformations转换算子(20个)
   随机抽样算子，根据传进去的小数按比例进行又放回或者无放回的抽样。
   	reduceByKey
   将相同的Key根据相应的逻辑进行处理。
+  java中只有reduceBy
   	sortByKey
   作用在K,V格式的RDD上，对key进行升序或者降序排序。
   	join,leftOuterJoin,rightOuterJoin,fullOuterJoin
@@ -70,6 +71,7 @@ Transformations转换算子(20个)
   	distinct(map+reduceByKey+map)
   	cogroup 
   当调用类型（K,V）和（K，W）的数据上时，返回一个数据集（K，（Iterable<V>,Iterable<W>））
+  https://www.jianshu.com/p/0e7a5e9021d7
 
 Action算子
   	count
