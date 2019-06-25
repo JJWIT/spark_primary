@@ -71,7 +71,8 @@ Transformations转换算子(20个)
   	distinct(map+reduceByKey+map)
   	cogroup 
   当调用类型（K,V）和（K，W）的数据上时，返回一个数据集（K，（Iterable<V>,Iterable<W>））
-  https://www.jianshu.com/p/0e7a5e9021d7
+  参考：https://www.jianshu.com/p/0e7a5e9021d7
+  将两个rdd的key对应的value值分别封装到一个Iterator中去
 
 Action算子
   	count
@@ -84,6 +85,18 @@ Action算子
   循环遍历数据集中的每个元素，运行相应的逻辑。
   	collect
   将计算结果回收到Driver端。
+  	collectAsMap
+  collectAsMap对（K，V）型的RDD数据返回一个单机HashMap。对于重复K的RDD元素，后面的元素覆盖前面的元素。
+  	top
+  相近函数说明如下。
+  ·top返回最大的k个元素。
+  ·take返回最小的k个元素。
+  ·takeOrdered返回最小的k个元素，并且在返回的数组中保持元素的顺序。
+  ·first相当于top（1）返回整个RDD中的前k个元素，可以定义排序的方式Ordering[T]。
+  返回的是一个含前k个元素的数组。
+  HDFS操作：
+  	saveAsTextFile
+  	saveAsObjectFile
 控制算子
 cache、persist、checkpoint
 
@@ -95,6 +108,13 @@ cache、persist、checkpoint
 6.-- 有多少个action算子就会触发多少个job
   一个partition由一个task来处理
 7.RDD持久化方式有三种：cache、persist、checkpoint
+
+### spark执行机制总览
+    1.
+
+### spark 调度
+    1.FIFO和FAIR 先进先出和公平调度
+    FAIR模式支持在调度池中为任务进行分组，不同的调度池权重不同，任务可以按照权重来决定执行顺序。
 
 ### spark优化
     1.rdd缓存、持久化
