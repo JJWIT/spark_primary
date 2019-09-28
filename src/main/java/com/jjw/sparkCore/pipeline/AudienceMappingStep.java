@@ -4,12 +4,14 @@ package com.jjw.sparkCore.pipeline;/**
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 import org.apache.spark.storage.StorageLevel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import scala.collection.Seq;
 
 /**
  * @ClassName AudienceMappingStep
@@ -54,7 +56,7 @@ public class AudienceMappingStep {
 
         //数据关联hive表后,未匹配上pin的设备号
 //        Dataset<Row> mismatchingPinDataset = mappingDataset.filter("pin2 is null").selectExpr("concat('d:" + deviceType + ":', pin1) as pin2").persist(StorageLevel.MEMORY_AND_DISK_SER_2());
-        Dataset<Row> mismatchingPinDataset = rowDatasetSource.except(mappingDataset.select("pin1")).selectExpr("concat('d:" + deviceType + ":', pin1) as pin2").persist(StorageLevel.MEMORY_AND_DISK_SER_2());
+        Dataset<Row> mismatchingPinDataset = rowDatasetSource.join(mappingDataset, new Column("pin1"), "left").filter("pin2 is null ").selectExpr("concat('d:" + deviceType + ":', pin1) as pin2").persist(StorageLevel.MEMORY_AND_DISK_SER_2());
         logger.info("device2Pin mismatchingPinDataset:{}", mismatchingPinDataset.count());
 
         //合并匹配上pin和未匹配上pin的设备数据
