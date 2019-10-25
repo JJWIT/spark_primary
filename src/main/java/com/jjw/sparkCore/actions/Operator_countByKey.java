@@ -29,10 +29,10 @@ public class Operator_countByKey {
 				new Tuple2<Integer,String>(4,"e")
 		));
 		
-		/*Map<Integer, Object> countByKey = parallelizePairs.countByKey();
-		for(Entry<Integer,Object>  entry : countByKey.entrySet()){
+		Map<Integer, Long> countByKey = parallelizePairs.countByKey();
+		for(Entry<Integer, Long> entry : countByKey.entrySet()){
 			System.out.println("key:"+entry.getKey()+"value:"+entry.getValue());
-		}*/
+		}
 		
 		
 	}
