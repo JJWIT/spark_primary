@@ -7,7 +7,7 @@ import org.apache.spark.storage.StorageLevel
 /**
   * Created by jiajianwei1 on 2019/2/1.
   */
-object Test2 {
+object PipelineTest {
 
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf().setMaster("local").setAppName("test1")

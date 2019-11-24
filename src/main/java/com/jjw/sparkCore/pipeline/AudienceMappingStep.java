@@ -29,8 +29,8 @@ public class AudienceMappingStep {
      * Return Type void
      */
     public static void main(String[] args) {
-//        SparkConf conf = new SparkConf();
-//        conf.setMaster("local").setAppName("pipeline");
+        SparkConf conf = new SparkConf();
+        conf.setMaster("local").setAppName("pipeline");
 
         final int deviceType = 48;
         long audienceSize = 0;
