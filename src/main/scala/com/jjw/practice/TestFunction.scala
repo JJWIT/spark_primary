@@ -169,5 +169,60 @@ object TestFunction {
   println("8.2 高阶函数， 函数的返回值是函数， result = " + fun82(1, 2))
   println("8.2 高阶函数， 函数的返回值是函数， result = " + fun82(1, 2)(3, 4))
 
-  // scala 第四个视频10分钟
+  // scala 第05个视频28分钟
+
+
+  // 字符串
+  println("****** 字符串 ******")
+  val sb = new StringBuilder
+  sb.+('a')
+  sb.++=("bcde")
+  println(sb)
+  sb.append("ddddd")
+  println(sb)
+
+  // 数组
+  println("****** 数组 ******")
+  val arr = Array(1, 2, 3, 4, 5f) // scala2.0 以上可以混写
+  val arr1 = Array[Int](1, 2, 4, 3) // 指定泛型
+
+  for (elem <- arr) {
+    println(elem)
+  }
+
+  arr.foreach(x => {
+    println(x)
+  })
+  arr1.foreach(println(_))
+
+
+  val arr2 = new Array[Int](3) // new 数组需要添加数组长度
+  arr2(0) = 111
+  arr2(1) = 222
+  arr2(2) = 333
+  arr2.foreach(println(_))
+
+  println("****** concat ******")
+  val arr3 = Array(1, 2)
+  val arr4 = Array(3, 4)
+  val arr5 = Array.concat(arr3, arr4)
+  arr5.foreach(println(_))
+
+  println("****** fill ******")
+  val arr6 = Array.fill(5)("abc") // fill 填充
+  arr6.foreach(println((_)))
+
+
+  println("****** tuple ******")
+  val tuple1 = new Tuple1(1)
+  val tuple2 = new Tuple2(1, 2)
+  val tuple3 = Tuple3(1, 2, 3)
+  val tuple4 = (1, 2, 3, 4)
+  println(tuple4._2) // 取第2个
+
+  val iterator = tuple4.productIterator
+  while (iterator.hasNext) {
+    println(iterator.next())
+  }
+
 }
