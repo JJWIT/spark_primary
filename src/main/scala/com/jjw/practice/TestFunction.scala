@@ -225,4 +225,14 @@ object TestFunction {
     println(iterator.next())
   }
 
+  // list
+  println("****** list ******")
+  val list = List("node1", "node2", "node3")
+  val list1 = List[Int](1, 2, 3, 4)
+  list.foreach(println)
+  for (elem <- list1) {
+    println(elem)
+  }
+
+
 }
