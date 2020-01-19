@@ -234,5 +234,12 @@ object TestFunction {
     println(elem)
   }
 
+  // map
+  println("****** map ******")
+  val colors = Map("red" -> "#FF0000", "azure" -> "#F0FFFF", 1 -> "one")
+  println(colors.get("red").get)
+  println(colors)
+
+
 
 }
