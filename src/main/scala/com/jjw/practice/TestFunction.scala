@@ -239,7 +239,7 @@ object TestFunction {
   val colors = Map("red" -> "#FF0000", "azure" -> "#F0FFFF", 1 -> "one")
   println(colors.get("red").get)
   println(colors)
-
-
+  val result = colors.filter(t => t._2 == "#FF0000")
+  print(result )
 
 }
