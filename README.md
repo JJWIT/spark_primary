@@ -130,3 +130,5 @@ cache、persist、checkpoint
 #### 错误
 1.本地运行spark sql 报错Exception in thread "main" org.apache.spark.SparkException: A master URL must be set in your configuration
 使用功能自己的conf 
+
+#### 代码在driver端和executor端执行区别
