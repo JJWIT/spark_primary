@@ -228,18 +228,27 @@ object TestFunction {
   // list
   println("****** list ******")
   val list = List("node1", "node2", "node3")
-  val list1 = List[Int](1, 2, 3, 4)
+  var list1 = List[Int](1, 2, 3, 4)
   list.foreach(println)
   for (elem <- list1) {
     println(elem)
   }
+
+  list1 = list1 :+ 5
+  println(list1)
 
   // map
   println("****** map ******")
   val colors = Map("red" -> "#FF0000", "azure" -> "#F0FFFF", 1 -> "one")
   println(colors.get("red").get)
   println(colors)
-  val result = colors.filter(t => t._2 == "#FF0000")
-  print(result )
+  var result = colors.filter(t => t._2 == "#FF0000")
+  println(result)
+  result += ("black" -> "aaaaa")
+  println(result)
+  result = result + ("black_a" -> "aaaaa")
+  println(result)
+
+  //
 
 }
